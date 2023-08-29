@@ -36,6 +36,9 @@ exports.getProductsByName = CatchAsync (async (req, res, next)=>{
 });
 
 exports.getProductByCategory = CatchAsync(async (req, res, next)=>{
+
+    const name = req.body.name
+
     const products = await Model.find({category});
 
     res.status(200).json(products);

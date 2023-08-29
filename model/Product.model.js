@@ -41,6 +41,14 @@ const productSchema = mongoose.Schema({
     dateAdded:{
         type:Date,
         default:Date.now()
+    },
+
+    category:{
+        type:String,
+        enum:[
+            "Fruits", "Accessories", "Clothing", "Home Decor", "Appliances", "Computing Devices"
+        ],
+        required:true
     }
 });
 
